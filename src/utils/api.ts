@@ -1,5 +1,6 @@
 import { fetchWeatherApi } from "openmeteo";
 
+// tipe untuk data cuaca yang diambil dari API
 export interface WeatherData {
   rainSum: number;
   temp: number;
@@ -7,6 +8,7 @@ export interface WeatherData {
   wind: number;
 }
 
+// bawaan fungsi untuk mengambil data cuaca dari API Open-Meteo
 export async function fetchWeatherData(
   latitude: number,
   longitude: number,

@@ -24,6 +24,7 @@ export default function PrediksiPanen() {
     let hasilTanam = "";
     let hasilPanen = "";
 
+    // logic prediksi tanam dan panen
     switch (selectedTanaman) {
       case "🌾 Padi":
         if (dataPanen.rainSum < 10 && dataPanen.soilMoisture >= 0.25 && dataPanen.soilMoisture <= 0.4)
