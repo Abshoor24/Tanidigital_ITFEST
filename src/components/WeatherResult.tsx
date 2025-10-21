@@ -3,10 +3,11 @@ import { type WeatherData } from "../utils/api";
 interface props {
     status: string[];
     data: WeatherData[];
+    conclusion?: string;
 }
 
-export default function WeatherResult({ status, data }: props) {
-    if ((!data || data.length === 0) && (!status || status.length === 0)) return null;
+export default function WeatherResult({ status, data, conclusion }: props) {
+    if ((!data || data.length === 0) && (!status || status.length === 0) && !conclusion) return null;
 
     const renderCard = (title: string, s?: string, d?: WeatherData) => (
         <div className="border rounded-lg p-3 bg-gray-50">
@@ -27,9 +28,14 @@ export default function WeatherResult({ status, data }: props) {
 
     return (
         <div className="mt-4">
-            <h2 className="text-xl font-bold m-2">Hasil Prediksi 7 Hari kedepan</h2>
+            <h2 className="text-xl font-bold m-2">Hasil Prediksi</h2>
+
+            {conclusion && (
+                <p className="m-2 text-sm text-gray-700 italic">{conclusion}</p>
+            )}
+
             <div className="grid grid-cols-1 gap-3">
-                {renderCard("Prediksi Tanam", status[0], data[0])}
+                {renderCard("Prediksi Menanam", status[0], data[0])}
                 {renderCard("Prediksi Panen", status[1], data[1])}
             </div>
         </div>

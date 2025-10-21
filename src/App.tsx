@@ -10,6 +10,7 @@ export default function PrediksiPanen() {
   const [selectedTanaman, setSelectedTanaman] = useState("");
   const [status, setStatus] = useState<string[]>([]);
   const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
+  const [conclusion, setConclusion] = useState<string>("");
   const [loading, setLoading] = useState(false);
 
   const handlePrediksiTanamPanen = async () => {
@@ -93,6 +94,7 @@ export default function PrediksiPanen() {
 
     setWeatherData([dataTanam, dataPanen]);
     setStatus([hasilTanam, hasilPanen]);
+    setConclusion(`${hasilTanam}\n\n${hasilPanen}`);
   };
 
   return (
@@ -114,7 +116,7 @@ export default function PrediksiPanen() {
         </div>
       </div>
 
-      <WeatherResult status={status} data={weatherData} />
+  <WeatherResult status={status} data={weatherData} conclusion={conclusion} />
     </div>
   );
 }
