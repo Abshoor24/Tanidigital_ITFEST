@@ -1,0 +1,2 @@
+- [x] Edit App.tsx: Change status to string[], modify handlePrediksi to fetch both tanam and panen, set status as array, replace two buttons with one.
+- [x] Edit WeatherResult.tsx: Change status prop to string[], loop to display both statuses.

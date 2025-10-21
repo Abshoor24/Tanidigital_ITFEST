@@ -8,46 +8,90 @@ import { fetchWeatherData, type WeatherData } from "./utils/api";
 export default function PrediksiPanen() {
   const [selectedProvinsi, setSelectedProvinsi] = useState("");
   const [selectedTanaman, setSelectedTanaman] = useState("");
-  const [status, setStatus] = useState("");
-  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+  const [status, setStatus] = useState<string[]>([]);
+  const [weatherData, setWeatherData] = useState<WeatherData[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const handlePrediksi = async (type: "tanam" | "panen") => {
+  const handlePrediksiTanamPanen = async () => {
     const prov = provinsiData.find((p) => p.nama === selectedProvinsi);
     if (!prov || !selectedTanaman) return alert("Pilih provinsi dan tanaman dulu!");
 
     setLoading(true);
-    const data = await fetchWeatherData(prov.latitude, prov.longitude, type);
+    const dataTanam = await fetchWeatherData(prov.latitude, prov.longitude, "tanam");
+    const dataPanen = await fetchWeatherData(prov.latitude, prov.longitude, "panen");
     setLoading(false);
 
-    let hasil = "";
+    let hasilTanam = "";
+    let hasilPanen = "";
 
-    if (selectedTanaman === "Padi") {
-      if (type === "panen") {
-        if (data.rainSum < 10 && data.soilMoisture >= 0.25 && data.soilMoisture <= 0.4)
-          hasil = "🌾 Waktu Tepat untuk Panen Padi";
-        else if (data.rainSum > 15) hasil = "☔ Tunda panen, curah hujan masih tinggi";
-        else hasil = "🌤️ Cuaca cukup baik, periksa kondisi tanaman";
-      } else {
-        if (data.rainSum > 5 && data.soilMoisture >= 0.2)
-          hasil = "🌱 Waktu Tepat untuk Menanam Padi";
-        else hasil = "💧 Kondisi tanah kurang lembab untuk menanam padi";
-      }
-    } else if (selectedTanaman === "Jagung") {
-      if (type === "panen") {
-        if (data.rainSum < 5 && data.soilMoisture >= 0.15 && data.soilMoisture <= 0.3)
-          hasil = "🌽 Waktu Tepat untuk Panen Jagung";
-        else if (data.rainSum > 10) hasil = "🌧️ Terlalu lembab, tunda panen jagung";
-        else hasil = "🌤️ Cuaca cukup baik untuk jagung";
-      } else {
-        if (data.rainSum > 3 && data.soilMoisture >= 0.15)
-          hasil = "🌱 Waktu Tepat untuk Menanam Jagung";
-        else hasil = "💧 Kondisi tanah belum optimal untuk jagung";
-      }
+    switch (selectedTanaman) {
+      case "🌾 Padi":
+        if (dataPanen.rainSum < 10 && dataPanen.soilMoisture >= 0.25 && dataPanen.soilMoisture <= 0.4)
+          hasilPanen = `🌾 Waktu Tepat untuk Panen Padi\nCurah hujan: ${dataPanen.rainSum.toFixed(1)} mm, Kelembapan tanah: ${(dataPanen.soilMoisture * 100).toFixed(1)}%`;
+        else if (dataPanen.rainSum > 15)
+          hasilPanen = `☔ Tunda panen, curah hujan tinggi (${dataPanen.rainSum.toFixed(1)} mm)`;
+        else hasilPanen = `🌤️ Cuaca cukup baik, pantau kondisi tanaman`;
+
+        if (dataTanam.rainSum > 5 && dataTanam.soilMoisture >= 0.2)
+          hasilTanam = `🌱 Waktu Tepat untuk Menanam Padi\nCurah hujan: ${dataTanam.rainSum.toFixed(1)} mm, Kelembapan tanah: ${(dataTanam.soilMoisture * 100).toFixed(1)}%`;
+        else hasilTanam = `💧 Kondisi tanah kurang lembab untuk menanam padi`;
+        break;
+
+      case "🌽 Jagung":
+        if (dataPanen.rainSum < 5 && dataPanen.soilMoisture >= 0.15 && dataPanen.soilMoisture <= 0.3)
+          hasilPanen = `🌽 Waktu Tepat untuk Panen Jagung`;
+        else if (dataPanen.rainSum > 10)
+          hasilPanen = `🌧️ Terlalu lembab, tunda panen jagung`;
+        else hasilPanen = `🌤️ Cuaca cukup baik untuk jagung`;
+
+        if (dataTanam.rainSum > 3 && dataTanam.soilMoisture >= 0.15)
+          hasilTanam = `🌱 Waktu Tepat untuk Menanam Jagung`;
+        else hasilTanam = `💧 Kondisi tanah belum optimal untuk menanam jagung`;
+        break;
+
+      case "🌶️ Cabai":
+        if (dataPanen.rainSum < 5 && dataPanen.soilMoisture >= 0.2 && dataPanen.soilMoisture <= 0.35)
+          hasilPanen = `🌶️ Waktu Tepat untuk Panen Cabai`;
+        else if (dataPanen.rainSum > 8)
+          hasilPanen = `☔ Tunda panen, hujan bisa merusak kualitas cabai`;
+        else hasilPanen = `🌤️ Cuaca cukup baik untuk panen cabai`;
+
+        if (dataTanam.rainSum < 5 && dataTanam.soilMoisture >= 0.2)
+          hasilTanam = `🌱 Waktu Tepat untuk Menanam Cabai (hindari musim hujan deras)`;
+        else hasilTanam = `🌧️ Terlalu basah untuk menanam cabai, tunda beberapa hari`;
+        break;
+
+      case "🍅 Tomat":
+        if (dataPanen.rainSum < 7 && dataPanen.soilMoisture >= 0.25 && dataPanen.soilMoisture <= 0.4)
+          hasilPanen = `🍅 Waktu Tepat untuk Panen Tomat`;
+        else if (dataPanen.rainSum > 12)
+          hasilPanen = `🌧️ Tunda panen, curah hujan tinggi dapat menyebabkan busuk buah`;
+        else hasilPanen = `🌤️ Cuaca cukup baik untuk panen tomat`;
+
+        if (dataTanam.rainSum > 3 && dataTanam.soilMoisture >= 0.2)
+          hasilTanam = `🌱 Waktu Tepat untuk Menanam Tomat`;
+        else hasilTanam = `💧 Kondisi tanah belum ideal untuk menanam tomat`;
+        break;
+
+      case "☕ Kopi":
+        if (dataPanen.rainSum < 10 && dataPanen.soilMoisture >= 0.25 && dataPanen.soilMoisture <= 0.5)
+          hasilPanen = `☕ Waktu Tepat untuk Panen Kopi`;
+        else if (dataPanen.rainSum > 15)
+          hasilPanen = `🌧️ Tunda panen kopi, biji bisa rusak karena lembap tinggi`;
+        else hasilPanen = `🌤️ Kondisi cukup baik, namun periksa kelembapan biji`;
+
+        if (dataTanam.rainSum > 8 && dataTanam.soilMoisture >= 0.3)
+          hasilTanam = `🌱 Waktu Tepat untuk Menanam Kopi (musim hujan ringan)`;
+        else hasilTanam = `💧 Tanah belum cukup lembap untuk menanam kopi`;
+        break;
+
+      default:
+        hasilTanam = "⚠️ Pilih tanaman terlebih dahulu";
+        hasilPanen = "⚠️ Pilih tanaman terlebih dahulu";
     }
 
-    setWeatherData(data);
-    setStatus(hasil);
+    setWeatherData([dataTanam, dataPanen]);
+    setStatus([hasilTanam, hasilPanen]);
   };
 
   return (
@@ -58,20 +102,13 @@ export default function PrediksiPanen() {
         <DropdownProvinsi selectedProvinsi={selectedProvinsi} onSelect={setSelectedProvinsi} />
         <DropdownTanaman selectedTanaman={selectedTanaman} onSelect={setSelectedTanaman} />
 
-        <div className="flex justify-between mt-4">
+        <div className="flex justify-center mt-4">
           <button
-            onClick={() => handlePrediksi("tanam")}
+            onClick={handlePrediksiTanamPanen}
             disabled={loading}
-            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg disabled:opacity-50"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg disabled:opacity-50"
           >
-            {loading ? "Memproses..." : "Prediksi Tanam"}
-          </button>
-          <button
-            onClick={() => handlePrediksi("panen")}
-            disabled={loading}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg disabled:opacity-50"
-          >
-            {loading ? "Memproses..." : "Prediksi Panen"}
+            {loading ? "Memproses..." : "Prediksi Tanam & Panen"}
           </button>
         </div>
       </div>

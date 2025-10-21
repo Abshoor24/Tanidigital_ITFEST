@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function DropdownTanaman({ selectedTanaman, onSelect }: Props) {
-    const tanamanList = ['Padi', 'Jagung'];
+    const tanamanList = ['🌾 Padi', '🌽 Jagung', '🌶️ Cabai', '🍅 Tomat', '☕ Kopi'];
     return(
         <div className='flex flex-col gap-1'>
             <label className='font-medium'>Pilih Tanaman :</label>
