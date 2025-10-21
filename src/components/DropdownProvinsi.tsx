@@ -1,0 +1,26 @@
+import pronvinsiData from '../data/provinsi.json';
+
+interface Props {
+    selectedProvinsi: string;
+    onSelect: (provinsi: string) => void;
+}
+
+export default function DropdownProvinsi({ selectedProvinsi, onSelect }: Props) {
+    return (
+        <div className="flex flex-col gap-1">
+            <label className='font-medium'>Pilih Provinsi :</label>
+            <select 
+            className="border rounded-lg p-2 focus:ring-2 focus:ring-green-500"
+            value={selectedProvinsi}
+            onChange={(e) => onSelect(e.target.value)}
+            >
+                <option value="">--Pilih Provinsi--</option>
+                {pronvinsiData.map((provinsi) => (
+                    <option key={provinsi.id} value={provinsi.nama}>
+                        {provinsi.nama}
+                    </option>
+                ))}
+            </select>
+        </div>
+    )
+}
