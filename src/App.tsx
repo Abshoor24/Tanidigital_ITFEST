@@ -94,12 +94,13 @@ export default function PrediksiPanen() {
 
     setWeatherData([dataTanam, dataPanen]);
     setStatus([hasilTanam, hasilPanen]);
-    setConclusion(`${hasilTanam}\n\n${hasilPanen}`);
+    setConclusion(`${hasilTanam}\n & \n${hasilPanen}`);
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded-xl shadow-md bg-white">
-      <h1 className="text-2xl font-bold mb-4 text-center">🌾 Prediksi Tanam & Panen</h1>
+    <div className="min-h-screen bg-gray-100 p-2">
+      <div className="max-w-md mx-auto mt-10 mb-10 p-6 border rounded-xl shadow-md bg-white">
+          <h1 className="text-2xl font-bold mb-4 text-center">🌾 Prediksi Tanam & Panen</h1>
 
       <div className="flex flex-col gap-4">
         <DropdownProvinsi selectedProvinsi={selectedProvinsi} onSelect={setSelectedProvinsi} />
@@ -117,6 +118,7 @@ export default function PrediksiPanen() {
       </div>
 
   <WeatherResult status={status} data={weatherData} conclusion={conclusion} />
+      </div>
     </div>
   );
 }
