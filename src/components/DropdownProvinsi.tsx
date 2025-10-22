@@ -1,15 +1,17 @@
+import type React from 'react';
 import pronvinsiData from '../data/provinsi.json';
 
 interface Props {
     selectedProvinsi: string;
-    onSelect: (provinsi: string) => void;
+    onSelect: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export default function DropdownProvinsi({ selectedProvinsi, onSelect }: Props) {
     return (
         <div className="flex flex-col gap-1">
             <label className='font-medium'>Pilih Provinsi :</label>
-            <select 
+            <select
+            title="select-provinsi" 
             className="border rounded-lg p-2 focus:ring-2 focus:ring-green-500"
             value={selectedProvinsi}
             onChange={(e) => onSelect(e.target.value)}
