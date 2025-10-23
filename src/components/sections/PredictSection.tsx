@@ -4,6 +4,7 @@ import DropdownTanaman from "../DropdownTanaman";
 import WeatherResult from "../WeatherResult";
 import provinsiData from "../../data/provinsi.json";
 import { fetchWeatherData, type WeatherData } from "../../utils/api";
+import Toast from "react-hot-toast";
 
 export default function PredictionSection() {
   const [selectedProvinsi, setSelectedProvinsi] = React.useState("");
@@ -15,9 +16,11 @@ export default function PredictionSection() {
 
   const handlePrediksiTanamPanen = async () => {
     const prov = provinsiData.find((p) => p.nama === selectedProvinsi);
-    if (!prov || !selectedTanaman)
-      return alert("Pilih provinsi dan tanaman dulu!");
-
+    if (!prov || !selectedTanaman) {
+      Toast.error("Pilih provinsi dan tanaman terlebih dahulu.");
+      return;
+    }
+      
     setLoading(true);
     const dataTanam = await fetchWeatherData(
       prov.latitude,

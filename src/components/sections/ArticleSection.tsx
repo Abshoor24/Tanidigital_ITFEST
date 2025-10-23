@@ -5,8 +5,8 @@ export default function ArticleSection() {
   return (
     <section className="flex flex-col gap-5 p-5">
       <div className="flex items-center justify-start w-full">
-        <p className="text-2xl font-semibold text-green-400 border-b-4 border-green-500">
-          Artikel Terkait :
+        <p className="text-2xl font-semibold text-green-700 border-b-2 border-green-700">
+          Artikel Terkait 
         </p>
       </div>
       <ArticleCard data={ArticleData} />
