@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Daftar Harga Komoditas Petani Indonesia",
+        "desc": "Website resmi pemerintah yang menyediakan informasi terkini dan prediksi harga berbagai komoditas pertanian di Indonesia.",
+        "image": "/images/artikel-01.png",
+        "link": "https://infoharga.bappebti.go.id/harga_komoditi_petani",
+        "by": "bappebti.go.id"
+    },
+    {
+        "title": "8 Cara Menanam Padi dari Awal sampai Akhir dan Bisa Dipanen secara Optimal",
+        "desc": "Panduan lengkap langkah-langkah menanam padi dari awal hingga panen untuk hasil yang optimal.",
+        "image": "https://akcdn.detik.net.id/community/media/visual/2025/05/13/padi-di-sawah-1747123449962_169.jpeg?w=700&q=90",
+        "link": "https://www.detik.com/jogja/bisnis/d-7912377/8-cara-menanam-padi-dari-awal-sampai-akhir-dan-bisa-dipanen-secara-optimal",
+        "by": "detik.com"
+    },
+    {
+        "title": "Pembibitan Modern Jadi Tren Bertani Masa Kini di Toba",
+        "desc": "Petani di Toba mulai beralih ke sistem pembibitan modern yang lebih efisien dan ramah lingkungan, mencerminkan tren pertanian masa kini.",
+        "image": "https://akcdn.detik.net.id/community/media/visual/2025/10/22/pembibitan-modern-jadi-tren-bertani-masa-kini-di-toba-1761125089657_43.jpeg?w=300&q=80",
+        "link": "https://finance.detik.com/foto-bisnis/d-8173374/pembibitan-modern-jadi-tren-bertani-masa-kini-di-toba",
+        "by": "detik.com"
+    },
+    {
+        "title": "Kementerian Pertanian Gelar Diklat Nasional di Bekasi, Tekankan Inovasi Pascapanen dan Digitalisasi Pertanian",
+        "desc": "Kementerian Pertanian mengadakan diklat nasional yang menekankan pentingnya inovasi pascapanen dan penerapan digitalisasi dalam pertanian untuk meningkatkan efisiensi dan daya saing petani.",
+        "image": "https://seputarindonesia.co.id/wp-content/uploads/2025/10/IMG_20251022_153536.jpg",
+        "link": "https://seputarindonesia.co.id/2025/10/22/kementerian-pertanian-gelar-diklat-nasional-di-bekasi-tekankan-inovasi-pascapanen-dan-digitalisasi-pertanian/",
+        "by": "seputarindonesia.co.id"
+    },
+    {
+        "title": "Ekspor Pertanian Indonesia Naik 38 Persen di 2025, Menuju Swasembada dan Ketahanan Pangan",
+        "desc": "Data terbaru menunjukkan ekspor sektor pertanian Indonesia naik hingga 38% sepanjang tahun 2025, menunjukkan peningkatan signifikan dalam produktivitas dan daya saing produk lokal di pasar internasional.",
+        "image": "https://cdn.banyumasekspres.id/wp-content/uploads/2025/10/indonesia-kian-dekat-capai-swasembada-pangan.jpg",
+        "link": "https://banyumasekspres.id/ekspor-pertanian-indonesia-naik-38-persen-di-2025-menuju-swasembada-dan-ketahanan-pangan/",
+        "by": "banyumasekspres.id"
+    }
+]

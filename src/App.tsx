@@ -1,16 +1,15 @@
-import { useState } from "react";
-import DropdownProvinsi from "./components/DropdownProvinsi";
-import DropdownTanaman from "./components/DropdownTanaman";
-import WeatherResult from "./components/WeatherResult";
-import provinsiData from "./data/provinsi.json";
-import { fetchWeatherData, type WeatherData } from "./utils/api";
 import PredictionSection from "./components/sections/PredictSection";
+import ArticleSection from "./components/sections/ArticleSection";
 
-export default function PrediksiPanen() {
-
+export default function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 p-2">
-      <PredictionSection/>
+    <div className="flex flex-col bg-gray-100 p-2">
+      <div className="flex w-full min-h-screen">
+        <PredictionSection />
+      </div>
+      <div className="flex w-full">
+        <ArticleSection />
+      </div>
     </div>
   );
 }
