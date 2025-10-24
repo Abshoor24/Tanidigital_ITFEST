@@ -224,7 +224,7 @@ export default function PredictionSection() {
   return (
     <section className="max-w-md mx-auto mt-10 mb-10 p-6 border rounded-xl shadow-md bg-white">
       <h1 className="text-2xl font-bold mb-4 text-center">
-        🌾 Prediksi Tanam & Panen
+        Prediksi Tanam & Panen
       </h1>
 
       <div className="flex flex-col gap-4">

@@ -15,7 +15,7 @@ export default function ArticleCard({ data }: ArticleCardProps) {
         return (
           <div
             key={i}
-            className="flex flex-col w-52 xl:w-72 h-[320px] xl:h-[380px] rounded-2xl shadow-lg overflow-hidden hover:border-2 border-green-500 hover:shadow-xl transition duration-700 gap-1"
+            className="flex flex-col w-52 xl:w-72 h-[320px] xl:h-[380px] rounded-2xl shadow-lg overflow-hidden hover:border hover:border-green-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out gap-1"
           >
             <img
               src={image || "/placeholder.jpg"}
