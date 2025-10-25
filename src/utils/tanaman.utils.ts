@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import plantsData from "../data/tanaman.json"
 
 interface PredictionLogic {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     provinsiData: any[]
     selectedProvinsi: string
     selectedPlantIndex: number
@@ -18,7 +19,13 @@ export const PredictionLogicHandle = async (data: PredictionLogic) => {
     try {
         const prov = data.provinsiData.find((p) => p.nama === data.selectedProvinsi);
         if (!prov) {
-            toast.error("Pilih provinsi dan tanaman terlebih dahulu.");
+            toast("Pilih Provinsi dan Tanaman dulu", {
+            icon: "⚠️",
+            style: {
+                color: "#000",
+            },
+            });
+
             return;
         }
 
@@ -65,8 +72,10 @@ export const PredictionLogicHandle = async (data: PredictionLogic) => {
         data.setStatus([hasilTanam, hasilPanen]);
         data.setConclusion(`${hasilTanam}\n & \n${hasilPanen}`);
     } catch (error) {
+        console.error(error)
+        toast.error("Terjadi kesalahan. Silakan coba lagi.")
         return
     } finally {
         data.setLoading(false)
-    }
+    } 
 };
