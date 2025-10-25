@@ -1,42 +1,232 @@
 [
-    {
-        "name": "🌾Padi",
-        "value": "padi"
+  {
+    "name": "🌾 Padi",
+    "value": "padi",
+    "harvest": {
+      "rainfall": 10,
+      "delayRainfall": 15,
+      "minSoilMoisture": 0.25,
+      "maxSoilMoisture": 0.4,
+      "messages": {
+        "ideal": "🌾 Waktu Tepat untuk Panen Padi",
+        "delay": "☔ Tunda panen, curah hujan tinggi",
+        "ok": "🌤️ Cuaca cukup baik, pantau kondisi tanaman"
+      }
     },
-    {
-        "name": "🌽 Jagung",
-        "value": "jagung"
-    },
-    {
-        "name": "🌶️ Cabai",
-        "value": "cabai"
-    },
-    {
-        "name": "🍅 Tomat",
-        "value": "tomat"
-    },
-    {
-        "name": "☕ Kopi",
-        "value": "kopi"
-    },
-    {
-        "name": "🍃 Teh",
-        "value": "teh"
-    },
-    {
-        "name": "🧄 Bawang Merah",
-        "value": "bawang-merah"
-    },
-    {
-        "name": "🌱 Singkong",
-        "value": "singkong"
-    },
-    {
-        "name": "🌴 Kelapa Sawit",
-        "value": "kelapa-sawit"
-    },
-    {
-        "name": "🍂 Tembakau",
-        "value": "tembakau"
+    "plant": {
+      "minSoilMoisture": 0.2,
+      "rainsum": 5,
+      "messages": {
+        "ideal": "🌱 Waktu Tepat untuk Menanam Padi",
+        "notIdeal": "💧 Kondisi tanah kurang lembab untuk menanam padi"
+      }
     }
+  },
+  {
+    "name": "🌽 Jagung",
+    "value": "jagung",
+    "harvest": {
+      "rainfall": 5,
+      "delayRainfall": 10,
+      "minSoilMoisture": 0.15,
+      "maxSoilMoisture": 0.3,
+      "messages": {
+        "ideal": "🌽 Waktu Tepat untuk Panen Jagung",
+        "delay": "🌧️ Terlalu lembab, tunda panen jagung",
+        "ok": "🌤️ Cuaca cukup baik untuk jagung"
+      }
+    },
+    "plant": {
+      "minSoilMoisture": 0.15,
+      "rainsum": 3,
+      "messages": {
+        "ideal": "🌱 Waktu Tepat untuk Menanam Jagung",
+        "notIdeal": "💧 Kondisi tanah belum optimal untuk menanam jagung"
+      }
+    }
+  },
+  {
+    "name": "🌶️ Cabai",
+    "value": "cabai",
+    "harvest": {
+      "rainfall": 5,
+      "delayRainfall": 8,
+      "minSoilMoisture": 0.2,
+      "maxSoilMoisture": 0.35,
+      "messages": {
+        "ideal": "🌶️ Waktu Tepat untuk Panen Cabai",
+        "delay": "☔ Tunda panen, hujan bisa merusak kualitas cabai",
+        "ok": "🌤️ Cuaca cukup baik untuk panen cabai"
+      }
+    },
+    "plant": {
+      "minSoilMoisture": 0.2,
+      "rainsum": 5,
+      "messages": {
+        "ideal": "🌱 Waktu Tepat untuk Menanam Cabai (hindari musim hujan deras)",
+        "notIdeal": "🌧️ Terlalu basah untuk menanam cabai, tunda beberapa hari"
+      }
+    }
+  },
+  {
+    "name": "🍅 Tomat",
+    "value": "tomat",
+    "harvest": {
+      "rainfall": 7,
+      "delayRainfall": 12,
+      "minSoilMoisture": 0.25,
+      "maxSoilMoisture": 0.4,
+      "messages": {
+        "ideal": "🍅 Waktu Tepat untuk Panen Tomat",
+        "delay": "🌧️ Tunda panen, curah hujan tinggi dapat menyebabkan busuk buah",
+        "ok": "🌤️ Cuaca cukup baik untuk panen tomat"
+      }
+    },
+    "plant": {
+      "minSoilMoisture": 0.2,
+      "rainsum": 3,
+      "messages": {
+        "ideal": "🌱 Waktu Tepat untuk Menanam Tomat",
+        "notIdeal": "💧 Kondisi tanah belum ideal untuk menanam tomat"
+      }
+    }
+  },
+  {
+    "name": "☕ Kopi",
+    "value": "kopi",
+    "harvest": {
+      "rainfall": 10,
+      "delayRainfall": 15,
+      "minSoilMoisture": 0.25,
+      "maxSoilMoisture": 0.5,
+      "messages": {
+        "ideal": "☕ Waktu Tepat untuk Panen Kopi",
+        "delay": "🌧️ Tunda panen kopi, biji bisa rusak karena lembap tinggi",
+        "ok": "🌤️ Kondisi cukup baik, namun periksa kelembapan biji"
+      }
+    },
+    "plant": {
+      "minSoilMoisture": 0.3,
+      "rainsum": 8,
+      "messages": {
+        "ideal": "🌱 Waktu Tepat untuk Menanam Kopi (musim hujan ringan)",
+        "notIdeal": "💧 Tanah belum cukup lembap untuk menanam kopi"
+      }
+    }
+  },
+  {
+    "name": "🍃 Teh",
+    "value": "teh",
+    "harvest": {
+      "rainfall": 10,
+      "delayRainfall": 15,
+      "minSoilMoisture": 0.3,
+      "maxSoilMoisture": 0.6,
+      "messages": {
+        "ideal": "🍃 Waktu Tepat untuk Panen Teh",
+        "delay": "🌧️ Tunda panen, kelembapan tinggi dapat menurunkan kualitas daun teh",
+        "ok": "🌤️ Cuaca cukup baik untuk panen teh"
+      }
+    },
+    "plant": {
+      "minSoilMoisture": 0.3,
+      "rainsum": 8,
+      "messages": {
+        "ideal": "🌱 Waktu Tepat untuk Menanam Teh (musim hujan ringan)",
+        "notIdeal": "💧 Tanah belum cukup lembap untuk menanam teh"
+      }
+    }
+  },
+  {
+    "name": "🧅 Bawang Merah",
+    "value": "bawang-merah",
+    "harvest": {
+      "rainfall": 5,
+      "delayRainfall": 8,
+      "minSoilMoisture": 0.2,
+      "maxSoilMoisture": 0.35,
+      "messages": {
+        "ideal": "🧅 Waktu Tepat untuk Panen Bawang Merah",
+        "delay": "☔ Tunda panen, curah hujan tinggi bisa membuat bawang membusuk",
+        "ok": "🌤️ Cuaca cukup baik untuk panen bawang merah"
+      }
+    },
+    "plant": {
+      "minSoilMoisture": 0.2,
+      "rainsum": 5,
+      "messages": {
+        "ideal": "🌱 Waktu Tepat untuk Menanam Bawang Merah (hindari hujan deras)",
+        "notIdeal": "🌧️ Terlalu basah untuk menanam bawang merah"
+      }
+    }
+  },
+  {
+    "name": "🌿 Singkong",
+    "value": "singkong",
+    "harvest": {
+      "rainfall": 10,
+      "delayRainfall": 15,
+      "minSoilMoisture": 0.2,
+      "maxSoilMoisture": 0.4,
+      "messages": {
+        "ideal": "🌿 Waktu Tepat untuk Panen Singkong",
+        "delay": "🌧️ Tunda panen, tanah terlalu lembap bisa membuat umbi busuk",
+        "ok": "🌤️ Cuaca cukup baik untuk panen singkong"
+      }
+    },
+    "plant": {
+      "minSoilMoisture": 0.25,
+      "rainsum": 5,
+      "messages": {
+        "ideal": "🌱 Waktu Tepat untuk Menanam Singkong",
+        "notIdeal": "💧 Tanah belum cukup lembap untuk menanam singkong"
+      }
+    }
+  },
+  {
+    "name": "🌴 Kelapa Sawit",
+    "value": "kelapa-sawit",
+    "harvest": {
+      "rainfall": 15,
+      "delayRainfall": 20,
+      "minSoilMoisture": 0.3,
+      "maxSoilMoisture": 0.6,
+      "messages": {
+        "ideal": "🌴 Waktu Tepat untuk Panen Kelapa Sawit",
+        "delay": "🌧️ Curah hujan tinggi, tunda panen agar tidak mengganggu pemanenan",
+        "ok": "🌤️ Cuaca cukup baik untuk panen sawit"
+      }
+    },
+    "plant": {
+      "minSoilMoisture": 0.35,
+      "rainsum": 10,
+      "messages": {
+        "ideal": "🌱 Waktu Tepat untuk Menanam Kelapa Sawit (musim hujan ringan)",
+        "notIdeal": "💧 Tanah belum cukup lembap untuk menanam sawit"
+      }
+    }
+  },
+  {
+    "name": "🚬 Tembakau",
+    "value": "tembakau",
+    "harvest": {
+      "rainfall": 5,
+      "delayRainfall": 8,
+      "minSoilMoisture": 0.15,
+      "maxSoilMoisture": 0.3,
+      "messages": {
+        "ideal": "🚬 Waktu Tepat untuk Panen Tembakau (musim kering ideal)",
+        "delay": "🌧️ Tunda panen, kelembapan tinggi dapat menurunkan kualitas daun",
+        "ok": "🌤️ Cuaca cukup baik untuk panen tembakau"
+      }
+    },
+    "plant": {
+      "minSoilMoisture": 0.2,
+      "rainsum": 5,
+      "messages": {
+        "ideal": "🌱 Waktu Tepat untuk Menanam Tembakau (hindari musim hujan)",
+        "notIdeal": "🌧️ Terlalu lembap untuk menanam tembakau"
+      }
+    }
+  }
 ]

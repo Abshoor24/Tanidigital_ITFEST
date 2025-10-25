@@ -1,8 +1,8 @@
 import tanamanData from "../data/tanaman.json";
 
 interface Props {
-  selectedTanaman: string;
-  onSelect: (tanaman: string) => void;
+  selectedTanaman: number;
+  onSelect: (tanaman: number) => void;
 }
 
 export default function DropdownTanaman({ selectedTanaman, onSelect }: Props) {
@@ -13,11 +13,11 @@ export default function DropdownTanaman({ selectedTanaman, onSelect }: Props) {
         title="select-tanaman"
         className="border rounded-lg p-2 focus:ring-2 focus:ring-green-500"
         value={selectedTanaman}
-        onChange={(e) => onSelect(e.target.value)}
+        onChange={(e) => onSelect(Number(e.target.value))}
       >
         <option value="">---pilih tanaman--</option>
-        {tanamanData.map(({ name, value }) => (
-          <option key={value} value={value}>
+        {tanamanData.map(({ name, value }, i) => (
+          <option key={value} value={i}>
             {name}
           </option>
         ))}
