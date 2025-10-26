@@ -11,6 +11,8 @@ interface Props {
   conclusion?: string;
 }
 
+import ClearButton from "./ClearButton";
+
 export default function WeatherResult({ status, data, conclusion }: Props) {
   const renderCard = (data: {
     title: string;
@@ -105,9 +107,15 @@ export default function WeatherResult({ status, data, conclusion }: Props) {
   return (
     <div className="flex flex-col w-full h-full bg-white p-5 rounded-xl shadow-lg">
       <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-4 shadow-md mb-6 text-center w-full">
-        <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white">
-          📊 Hasil Prediksi
-        </h2>
+        <div className="text-lg md:text-xl lg:text-2xl text-white">
+          <div className="flex items-center gap-2">
+            <h2 className="font-bold">
+              📊 Hasil Prediksi 
+            </h2>
+            <span className="italic">(7 Hari ke depan)</span>
+          </div>
+        </div>
+        
       </div>
       <div className="mb-6 p-3 bg-gradient-to-r from-amber-50 to-yellow-200 border-l-4 border-amber-400 rounded-r-lg w-full max-w-5xl mx-auto">
         <div className="flex items-start gap-3">
@@ -129,6 +137,9 @@ export default function WeatherResult({ status, data, conclusion }: Props) {
           d: data[1],
           t: "harvest",
         })}
+
+    <ClearButton show={!!(conclusion || (data && data.length > 0))} />
+
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export default function Navbar({ sectionRefs }: NavbarProps) {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between w-full h-20 bg-[#3A3A3A]/70 px-10 p-2 backdrop-blur-sm border-b-2 border-green-500">
+    <nav className="flex items-center justify-between w-full h-20 bg-gray-600/70 px-10 p-2 backdrop-blur-sm border-b-2 border-green-500">
       <img
         src="/agrovision.png"
         alt="logo"
