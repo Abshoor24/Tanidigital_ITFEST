@@ -20,7 +20,9 @@ export default function WeatherResult({ status, data, conclusion }: Props) {
   }) => (
     <div
       className={`${
-        data.t === "plant" ? "hover:border-green-300 " : "hover:border-[#AB7500]"
+        data.t === "plant"
+          ? "hover:border-green-300 "
+          : "hover:border-[#AB7500]"
       } border-2 border-gray-200 rounded-xl p-4 bg-gradient-to-br from-white to-gray-50 
       shadow-sm hover:shadow-lg transition-all duration-300
       flex flex-col justify-between h-full min-w-0`}
@@ -102,44 +104,32 @@ export default function WeatherResult({ status, data, conclusion }: Props) {
 
   return (
     <div className="flex flex-col w-full h-full bg-white p-5 rounded-xl shadow-lg">
-      {data.length > 0 && status.length > 0 && conclusion ? (
-        <>
-          <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-4 shadow-md mb-6 text-center w-full">
-            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white">
-              📊 Hasil Prediksi
-            </h2>
-          </div>
-          {conclusion && (
-            <div className="mb-6 p-3 bg-gradient-to-r from-amber-50 to-yellow-50 border-l-4 border-amber-400 rounded-r-lg w-full max-w-5xl mx-auto">
-              <div className="flex items-start gap-3">
-                <p className="text-base text-gray-700 leading-relaxed italic">
-                  {conclusion}
-                </p>
-              </div>
-            </div>
-          )}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full max-w-5xl mx-auto items-stretch">
-            {renderCard({
-              title: "🌱 Prediksi Menanam",
-              s: status[0],
-              d: data[0],
-              t: "plant",
-            })}
-            {renderCard({
-              title: "🌾 Prediksi Panen",
-              s: status[1],
-              d: data[1],
-              t: "harvest",
-            })}
-          </div>
-        </>
-      ) : (
-        <div className="flex items-center justify-center w-full h-full">
-          <p className="font-semibold text-lg text-black">
-            Mulai Prediksi Sekarang !!
+      <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-4 shadow-md mb-6 text-center w-full">
+        <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white">
+          📊 Hasil Prediksi
+        </h2>
+      </div>
+      <div className="mb-6 p-3 bg-gradient-to-r from-amber-50 to-yellow-200 border-l-4 border-amber-400 rounded-r-lg w-full max-w-5xl mx-auto">
+        <div className="flex items-start gap-3">
+          <p className="text-base text-gray-700 leading-relaxed italic font-semibold">
+            {conclusion || "Data Tidak Tersedia"}
           </p>
         </div>
-      )}
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full max-w-5xl mx-auto items-stretch">
+        {renderCard({
+          title: "🌱 Prediksi Menanam",
+          s: status[0],
+          d: data[0],
+          t: "plant",
+        })}
+        {renderCard({
+          title: "🌾 Prediksi Panen",
+          s: status[1],
+          d: data[1],
+          t: "harvest",
+        })}
+      </div>
     </div>
   );
 }
