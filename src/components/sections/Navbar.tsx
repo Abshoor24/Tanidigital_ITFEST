@@ -49,11 +49,11 @@ export default function Navbar({ sectionRefs }: NavbarProps) {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between w-full h-20 md:h-24 bg-[#3A3A3A]/70 px-10 p-2 backdrop-blur-sm border-b-2 border-green-500">
+    <nav className="flex items-center justify-between w-full h-20 bg-[#3A3A3A]/70 px-10 p-2 backdrop-blur-sm border-b-2 border-green-500">
       <img
         src="/agrovision.png"
         alt="logo"
-        className="w-16 h-16 md:w-20 md:h-20"
+        className="w-16 h-16"
       />
       <div className="flex items-center justify-between text-white text-lg md:text-xl gap-5">
         {navbarMenu.map(({ title, target }, i) => {
