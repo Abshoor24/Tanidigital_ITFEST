@@ -19,7 +19,7 @@ export default function App() {
   ];
 
   return (
-    <div className="flex flex-col bg-gray-100 ">
+    <div className="flex flex-col bg-gray-200 overflow-hidden">
       <div className="fixed flex w-full z-50">
         <Navbar sectionRefs={sectionRefs} />
       </div>
@@ -31,7 +31,7 @@ export default function App() {
             ref={(el) => {
               if (el) sectionRefs.current[i] = el;
             }}
-            className="prediction flex w-full min-h-screen pt-20"
+            className="flex w-full min-h-screen pt-20"
           >
             <Component />
           </div>

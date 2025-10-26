@@ -14,50 +14,59 @@ export default function PredictionSection() {
   const [conclusion, setConclusion] = React.useState<string>("");
   const [loading, setLoading] = React.useState(false);
 
-  const handlePredict = async() => {
-    await PredictionLogicHandle({ provinsiData,selectedProvinsi, selectedPlantIndex, setConclusion, setLoading,setStatus,setWeatherData })
-  }
+  const handlePredict = async () => {
+    await PredictionLogicHandle({
+      provinsiData,
+      selectedProvinsi,
+      selectedPlantIndex,
+      setConclusion,
+      setLoading,
+      setStatus,
+      setWeatherData,
+    });
+  };
 
   return (
-    <section className="max-w-6xl mx-auto mt-10 mb-16 px-4 md:px-6 min-h-[80vh]">
-      <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-        <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
-          Prediksi Tanam & Panen
-        </h1>
+    <section className="flex flex-col xl:flex-row mx-auto mt-10 mb-16 px-4 md:px-6 w-full min-h-[80vh] gap-5">
+      <div className="relative flex flex-col w-full h-full xl:max-w-[35%] bg-white rounded-xl shadow-lg p-5 backdrop-blur-sm">
+        <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-4 shadow-md mb-6 text-center w-full">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white">
+            🌱 Prediksi Tanam dan Panen
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-end mb-6">
-          <div className="w-full">
-            <DropdownProvinsi
-              selectedProvinsi={selectedProvinsi}
-              onSelect={setSelectedProvinsi}
-            />
-          </div>
-          
-          <div className="w-full">
-            <DropdownTanaman
-              selectedTanaman={selectedPlantIndex}
-              onSelect={setSelectedPlantIndex}
-            />
-          </div>
-
-          <div className="w-full flex justify-center md:justify-start">
+        <div className="flex flex-col w-full h-full md:grid-cols-3 gap-4 md:gap-6 items-center justify-between mb-6">
+          <section className="flex flex-col w-full gap-10">
+            <div className="w-full h-20">
+              <DropdownProvinsi
+                selectedProvinsi={selectedProvinsi}
+                onSelect={setSelectedProvinsi}
+              />
+            </div>
+            <div className="w-full">
+              <DropdownTanaman
+                selectedTanaman={selectedPlantIndex}
+                onSelect={setSelectedPlantIndex}
+              />
+            </div>
+          </section>
+          <div className="w-full flex self-end">
             <button
               onClick={handlePredict}
               disabled={loading}
-              className="w-full md:w-auto bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg disabled:opacity-50 font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 disabled:hover:scale-100"
+              className="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg disabled:opacity-50 font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
             >
               {loading ? "⏳ Memproses..." : "🔍 Prediksi"}
             </button>
           </div>
         </div>
-
-        {/* Weather Result Section */}
-        <WeatherResult
-          status={status}
-          data={weatherData}
-          conclusion={conclusion}
-        />
       </div>
+      {/* Weather Result Section */}
+      <WeatherResult
+        status={status}
+        data={weatherData}
+        conclusion={conclusion}
+      />
     </section>
   );
 }

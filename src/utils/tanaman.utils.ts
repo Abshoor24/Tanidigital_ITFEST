@@ -71,6 +71,7 @@ export const PredictionLogicHandle = async (data: PredictionLogic) => {
         data.setWeatherData([dataTanam, dataPanen]);
         data.setStatus([hasilTanam, hasilPanen]);
         data.setConclusion(`${hasilTanam}\n & \n${hasilPanen}`);
+        toast.success("Prediksi berhasil")
     } catch (error) {
         console.error(error)
         toast.error("Terjadi kesalahan. Silakan coba lagi.")
