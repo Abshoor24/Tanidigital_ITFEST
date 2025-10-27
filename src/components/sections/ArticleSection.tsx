@@ -1,6 +1,6 @@
 import ArticleData from "../../data/artikel.json";
 import ArticleCard from "../cards/ArticleCard";
-import ArticleCardLarge from "../cards/ArticleCard-large";
+import ArticleCardLarge from "../cards/ArticleCardLarge";
 
 export default function ArticleSection() {
   return (

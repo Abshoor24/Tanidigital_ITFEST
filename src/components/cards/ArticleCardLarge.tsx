@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ArticleCardLargeProps {
   data: {
     title: string;

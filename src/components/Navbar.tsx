@@ -43,18 +43,15 @@ export default function Navbar({ sectionRefs }: NavbarProps) {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
     sectionRefs.current?.forEach((el) => el && observer.observe(el));
+    () => observer.disconnect();
   }, []);
 
   return (
     <nav className="flex items-center justify-between w-full h-20 bg-gray-600/70 px-10 p-2 backdrop-blur-sm border-b-2 border-green-500">
-      <img
-        src="/agrovision.png"
-        alt="logo"
-        className="w-16 h-16"
-      />
+      <img src="/agrovision.png" alt="logo" className="w-16 h-16" />
       <div className="flex items-center justify-between text-white text-lg md:text-xl gap-5">
         {navbarMenu.map(({ title, target }, i) => {
           return (
