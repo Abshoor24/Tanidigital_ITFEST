@@ -27,7 +27,7 @@ export default function PredictionSection() {
   };
 
   return (
-    <section className="flex flex-col xl:flex-row mx-auto mt-10 mb-16 px-4 md:px-6 w-full min-h-[80vh] gap-5">
+    <section className="flex flex-col xl:flex-row mx-auto mt-6 mb-16 px-4 md:px-6 w-full min-h-[80vh] gap-5">
       <div className="relative flex flex-col w-full h-full xl:max-w-[35%] bg-white rounded-xl shadow-lg p-5 backdrop-blur-sm">
         <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-4 shadow-md mb-6 text-center w-full">
           <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white">
@@ -54,7 +54,8 @@ export default function PredictionSection() {
             <button
               onClick={handlePredict}
               disabled={loading}
-              className="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg disabled:opacity-50 font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+              className="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg disabled:opacity-50 font-semibold transition-all 
+              duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
             >
               {loading ? "⏳ Memproses..." : "🔍 Prediksi"}
             </button>
