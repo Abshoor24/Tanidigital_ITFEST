@@ -1,4 +1,4 @@
-import tanamanData from "../data/tanaman.json";
+import tanamanData from "../../data/tanaman.json";
 
 interface Props {
   selectedTanaman: number;

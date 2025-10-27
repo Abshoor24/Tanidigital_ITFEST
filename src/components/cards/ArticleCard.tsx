@@ -10,7 +10,7 @@ interface ArticleCardProps {
 
 export default function ArticleCard({ data }: ArticleCardProps) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 items-center w-full h-full gap-5">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden lg:grid-cols-5 items-center w-full h-full gap-5">
       {data.map(({ title, link, image, desc, by }, i) => {
         return (
           <div

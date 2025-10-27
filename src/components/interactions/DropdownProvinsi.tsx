@@ -1,5 +1,5 @@
 import type React from 'react';
-import pronvinsiData from '../data/provinsi.json';
+import pronvinsiData from '../../data/provinsi.json';
 
 interface Props {
     selectedProvinsi: string;

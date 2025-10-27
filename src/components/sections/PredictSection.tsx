@@ -1,6 +1,6 @@
 import React from "react";
-import DropdownProvinsi from "../DropdownProvinsi";
-import DropdownTanaman from "../DropdownTanaman";
+import DropdownProvinsi from "../interactions/DropdownProvinsi";
+import DropdownTanaman from "../interactions/DropdownTanaman";
 import WeatherResult from "../WeatherResult";
 import provinsiData from "../../data/provinsi.json";
 import { PredictionLogicHandle } from "../../utils/tanaman.utils";

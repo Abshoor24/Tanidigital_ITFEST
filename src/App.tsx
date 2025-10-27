@@ -1,7 +1,7 @@
 import PredictionSection from "./components/sections/PredictSection";
 import ArticleSection from "./components/sections/ArticleSection";
-import Footer from "./components/sections/Footer";
-import Navbar from "./components/sections/Navbar";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import React from "react";
 
 export default function App() {
