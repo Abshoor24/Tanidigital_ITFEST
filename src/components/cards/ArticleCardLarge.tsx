@@ -33,7 +33,7 @@ export default function ArticleCardLarge({ data }: ArticleCardLargeProps) {
               </section>
             </div>
             <img
-              className="w-96 h-60 rounded-md object-cover border-2 border-black"
+              className="min-w-[20rem] w-96 h-60 rounded-md object-cover border-2 border-black"
               src={image}
               alt={title}
             />
