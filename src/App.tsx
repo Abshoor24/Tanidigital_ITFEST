@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import React from "react";
 import Section1 from "./components/sections/Section1";
+import Section2 from "./components/sections/Section2";
 
 export default function App() {
   const sectionRefs = React.useRef<HTMLDivElement[]>([]);
@@ -12,6 +13,10 @@ export default function App() {
     {
       id: "section1",
       Component: Section1,
+    },
+    {
+      id: "section2",
+      Component: Section2,
     },
     {
       id: "prediction",
@@ -39,6 +44,9 @@ export default function App() {
             className="flex w-full min-h-screen pt-20"
           >
             <Component />
+            <div>
+
+            </div>
           </div>
         );
       })}

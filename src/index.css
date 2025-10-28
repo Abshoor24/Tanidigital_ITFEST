@@ -1,3 +1,35 @@
+/* Import Montserrat from Google Fonts (used for headings). */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global font settings:
+	 - Body / UI: Helvetica (system fallback)
+	 - Headings: Montserrat (imported) with Helvetica fallbacks
+	 Sizes are intentionally NOT changed; existing classnames control sizes.
+*/
+@layer base {
+	body {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+
+	/* Use Montserrat for headings; keep fallback to Helvetica */
+	h1, h2, h3, h4, h5, h6,
+	.font-heading {
+		font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
