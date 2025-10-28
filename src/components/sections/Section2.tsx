@@ -1,5 +1,3 @@
-// src/components/Section2.jsx
-import React from "react";
 import sect2 from "../../assets/sect2.png";
 import { BarChart3, MonitorSmartphone, User2 } from "lucide-react";
 
