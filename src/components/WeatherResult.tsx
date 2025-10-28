@@ -109,13 +109,10 @@ export default function WeatherResult({ status, data, conclusion }: Props) {
       <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-4 shadow-md mb-6 text-center w-full">
         <div className="text-lg md:text-xl lg:text-2xl text-white">
           <div className="flex items-center gap-2">
-            <h2 className="font-bold">
-              📊 Hasil Prediksi 
-            </h2>
+            <h2 className="font-bold">📊 Hasil Prediksi</h2>
             <span className="italic">(7 Hari ke depan)</span>
           </div>
         </div>
-        
       </div>
       <div className="mb-6 p-3 bg-gradient-to-r from-amber-50 to-yellow-200 border-l-4 border-amber-400 rounded-r-lg w-full max-w-5xl mx-auto">
         <div className="flex items-start gap-3">
@@ -137,10 +134,8 @@ export default function WeatherResult({ status, data, conclusion }: Props) {
           d: data[1],
           t: "harvest",
         })}
-
-    <ClearButton show={!!(conclusion || (data && data.length > 0))} />
-
       </div>
+      <ClearButton show={!!(conclusion || (data && data.length > 0))} />
     </div>
   );
 }

@@ -35,7 +35,7 @@ export default function PredictionSection() {
           </h2>
         </div>
 
-        <div className="flex flex-col w-full h-full md:grid-cols-3 gap-4 md:gap-6 items-center justify-between mb-6">
+        <div className="flex flex-col w-full h-full md:grid-cols-3 gap-4 md:gap-6 items-center justify-between ">
           <section className="flex flex-col w-full gap-10">
             <div className="w-full h-20">
               <DropdownProvinsi
@@ -50,12 +50,12 @@ export default function PredictionSection() {
               />
             </div>
           </section>
-          <div className="w-full flex self-end">
+          <div className="w-full flex">
             <button
               onClick={handlePredict}
               disabled={loading}
-              className="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg disabled:opacity-50 font-semibold transition-all 
-              duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+              className="w-full bg-green-500 hover:bg-green-300 hover:opacity-70 text-white px-6 py-3 rounded-lg disabled:opacity-50 font-semibold transition-all 
+              duration-300 shadow-md"
             >
               {loading ? "⏳ Memproses..." : "🔍 Prediksi"}
             </button>
