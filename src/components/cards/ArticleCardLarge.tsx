@@ -13,7 +13,7 @@ export default function ArticleCardLarge({ data }: ArticleCardLargeProps) {
     <div className="hidden md:flex flex-col w-full h-full gap-5">
       {data?.map(({ title, link, desc, image, by }, i) => {
         return (
-          <div key={i} className="flex items-center justify-between w-full max-h-80 bg-white p-5 gap-5">
+          <div key={i} className="flex items-center justify-between w-full max-h-80 bg-white p-5 gap-5 rounded-2xl shadow-md overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
             <div className="flex flex-col justify-between w-full h-full max-w-[70%]">
               <section className="flex flex-col w-full gap-2">
                 <h1 className="font-semibold text-black text-2xl line-clamp-2">
