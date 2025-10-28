@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface NavbarProps {
   sectionRefs: React.RefObject<HTMLDivElement[] | null>;
@@ -48,10 +49,10 @@ export default function Navbar({ sectionRefs }: NavbarProps) {
     );
     sectionRefs.current?.forEach((el) => el && observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [sectionRefs, isOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-500/70 backdrop-blur-sm border-b-2 border-green-500">
+    <nav className={`${isOpen ? "h-auto" : "h-20"} fixed top-0 left-0 right-0 z-50 bg-gray-500/70 backdrop-blur-sm border-b-2 border-green-500`}>
       <div className="flex items-center justify-between h-20 px-5 md:px-10 text-white">
         <div className="flex items-center gap-2">
           <img src="/agrovision.png" alt="logo" className="w-14 h-14" />
@@ -83,24 +84,30 @@ export default function Navbar({ sectionRefs }: NavbarProps) {
           ))}
         </div>
       </div>
-
-      {isOpen && (
-        <div className="flex flex-col items-center md:hidden bg-gray-800/90 backdrop-blur-md py-5 space-y-4 text-white animate-fadeIn">
-          {navbarMenu.map(({ title, target }, i) => (
-            <button
-              key={i}
-              ref={(el) => {
-                if (el) navMenuRef.current[i] = el;
-              }}
-              data-target={target}
-              onClick={() => handleScroll(i)}
-              className="text-lg hover:text-green-400 transition duration-300"
-            >
-              {title}
-            </button>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ translateY: -50, opacity: 0 }}
+            animate={{ translateY: 0, opacity: 1 }}
+            exit={{ translateY: -50, opacity: 0 }}
+            className="flex flex-col items-center md:hidden bg-transparent py-5 space-y-4 text-white animate-fadeIn"
+          >
+            {navbarMenu.map(({ title, target }, i) => (
+              <button
+                key={i}
+                ref={(el) => {
+                  if (el) navMenuRef.current[i] = el;
+                }}
+                data-target={target}
+                onClick={() => handleScroll(i)}
+                className="text-lg hover:text-green-400 transition duration-300"
+              >
+                {title}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
