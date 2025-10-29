@@ -34,8 +34,8 @@ export async function fetchWeatherData(
   const responses = await fetchWeatherApi(url, params);
   const response = responses[0];
 
-  const utcOffsetSeconds = response.utcOffsetSeconds();
-  const current = response.current()!;
+  // const utcOffsetSeconds = response.utcOffsetSeconds();
+  // const current = response.current()!;
   const hourly = response.hourly()!;
   const daily = response.daily()!;
 
