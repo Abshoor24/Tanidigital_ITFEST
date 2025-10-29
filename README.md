@@ -6,18 +6,17 @@ Website ini dibuat sebagai proyek pembelajaran sekaligus tugas pengembangan web 
 ## 🚀 Fitur Utama
 - **Prediksi Panen** → Mengambil data dari OpenWeatherMap untuk memperkirakan potensi hasil panen 7 hari ke depan.
 - **Prediksi Waktu Menanam** → Menentukan waktu terbaik untuk mulai menanam berdasarkan kondisi cuaca.
-- **Prediksi Harga Komoditas** → Menampilkan grafik tren harga dari [hargapangan.id](https://hargapangan.id).
 - **Artikel Pertanian Edukatif** → Berisi artikel singkat seputar tips dan teknologi pertanian modern.
 - **Tampilan Responsif** → Desain website bisa menyesuaikan tampilan desktop dan mobile.
 
 ## 🛠️ Teknologi yang Digunakan
 - **Frontend:** React + TypeScript + Tailwind CSS  
-- **API:** OpenWeatherMap, HargaPangan.id  
+- **API:** Open-Mateo
 - **Hosting:** Vercel  
 
-## 📞 Kontak
-Kalau ingin berdiskusi atau mencoba demo, bisa langsung hubungi lewat WhatsApp:  
-[![WhatsApp](https://img.shields.io/badge/Chat-via_WhatsApp-green?logo=whatsapp)](https://wa.me/6281234567890)
+## 💻 Tech Stack
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+![Tailwind CSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white&style=for-the-badge)
 
 ---
 
