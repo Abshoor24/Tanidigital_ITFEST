@@ -18,6 +18,10 @@ Website ini dibuat sebagai proyek pembelajaran sekaligus tugas pengembangan web 
 ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=for-the-badge)
 ![Tailwind CSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white&style=for-the-badge)
 
+# Lain - lain
+- Github : https://github.com/Abshoor24/AgroVision_ITFEST
+- Vercel : https://agrovision-itfest.vercel.app/ 
+
 ---
 
 Dibuat dengan semangat belajar oleh siswa **SMK Telkom Purwokerto** 🌱
